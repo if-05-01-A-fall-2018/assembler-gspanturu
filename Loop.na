@@ -1,0 +1,46 @@
+"Enter your loop number:"
+inc 12
+
+#print enter
+lit 0
+lit 23
+lit 24
+out 2
+
+#enter number
+la 0 32
+la 0 36
+in 0
+
+#load 1 and print it
+la 0 40
+lit 1
+sto
+lv 0 40
+lit 1
+out 0
+out 3
+
+jmp .loop
+
+.loop # start of loop
+#add 1, store and print
+la 0 40
+lv 0 40
+lit 1
+add
+sto
+lv 0 40
+lit 1
+out 0
+out 3
+
+#compare
+lv 0 32
+lv 0 40
+rel 2
+tjmp .end #go to end
+jmp .loop #go back to loop
+
+.end
+halt
